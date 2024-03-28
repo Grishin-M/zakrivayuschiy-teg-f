@@ -124,7 +124,7 @@
   border-block-end: 2px solid var(--color-primary, #00cc14);
   padding: 5px 10px;
   font-size: 18px;
-  font-variation-settings: 'wght' 700;
+  font-variation-settings: 'wght' 785;
 }
 
 .card__image-container {
@@ -344,6 +344,13 @@ article:nth-child(8)>.card__image-container::after {
 .modal[open]::backdrop {
   background-color: var(--black, #000);
   opacity: 0.75;
+}
+
+@supports (-webkit-text-stroke: 1px var(--tip-color)) {
+  .card__image-container::after {
+    text-shadow: none;
+    -webkit-text-stroke: 1px var(--tip-color);
+  }
 }
 
 @media (width <=375px) {
