@@ -38,16 +38,3 @@
     --tip-color: #fff;
   }
 }
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --color-primary: #00cc14;
-    --text-button-color: var(--color-primary);
-    --background-color: #000;
-    --background-image:
-      repeating-linear-gradient(90deg, #000 0 2px, rgba(0, 0, 0, 0) 2px 4px),
-      repeating-linear-gradient(180deg, #000 0 2px, rgba(0, 0, 0, 0) 2px 4px),
-      linear-gradient(180deg, #007f0c 0%, #004306 100%);
-    --tip-color: #00cc14;
-  }
-}

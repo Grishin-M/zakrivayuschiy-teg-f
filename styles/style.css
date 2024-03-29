@@ -18,7 +18,7 @@
   min-inline-size: 320px;
   min-block-size: 100dvb;
   color: var(--color-primary, #00cc14);
-  font-family: 'Inter', sans-serif;
+  font-family: var(--font-family-primary), sans-serif;
   font-variation-settings: 'wght' 465;
   padding: 100px 0;
   background-color: var(--background-color, #000);
@@ -33,7 +33,7 @@
 }
 
 .header {
-  font-family: 'PressStart2P', system-ui;
+  font-family: var(--font-family-secondary), fantasy;
   display: grid;
   justify-items: center;
   background-color: var(--background-color, #000);
@@ -73,6 +73,7 @@
 
 .theme-menu__button:hover {
   opacity: 0.6;
+  transition: 0.3s;
 }
 
 .theme-menu__button:disabled {
@@ -135,13 +136,15 @@ article>.card__image-container::after {
   position: absolute;
   opacity: 0.5;
   color: var(--black, #000);
-  font-family: 'PressStart2P', system-ui;
+  font-family: var(--font-family-secondary), fantasy;
   font-size: 14px;
   text-shadow: 0 0 2px var(--tip-color);
   inset-block-start: 25px;
   inset-inline-end: clamp(0.8125rem, 0.5484rem + 1.1268vw, 1.5625rem);
   mix-blend-mode: hard-light;
 }
+
+
 
 article:nth-child(1)>.card__image-container::after,
 article:nth-child(2)>.card__image-container::after {
@@ -237,7 +240,7 @@ article:nth-child(8)>.card__image-container::after {
 }
 
 .button {
-  font-family: 'PressStart2P', system-ui;
+  font-family: var(--font-family-secondary), fantasy;
   font-size: 14px;
   color: var(--text-button-color, #fff);
   background-color: var(--background-color);
@@ -307,7 +310,7 @@ article:nth-child(8)>.card__image-container::after {
   border: 2px solid var(--color-primary);
   padding: 30px;
   color: var(--color-primary);
-  font-family: 'PressStart2P', system-ui;
+  font-family: var(--font-family-secondary), fantasy;
   font-size: 14px;
   background-color: var(--background-color);
 }
@@ -346,10 +349,11 @@ article:nth-child(8)>.card__image-container::after {
   opacity: 0.75;
 }
 
-@supports (-webkit-text-stroke: 1px var(--tip-color)) {
-  .card__image-container::after {
+@supports ((text-stroke: 1px var(--tip-color)) or (-webkit-text-stroke: 1px var(--tip-color))) {
+  article>div.card__image-container::after {
     text-shadow: none;
     -webkit-text-stroke: 1px var(--tip-color);
+    text-stroke: 1px var(--tip-color);
   }
 }
 
@@ -369,5 +373,6 @@ article:nth-child(8)>.card__image-container::after {
   .modal {
     inline-size: 100%;
     padding: 30px 40px;
+    max-width: 341px;
   }
 }
